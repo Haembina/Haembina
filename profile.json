@@ -1,0 +1,38 @@
+{
+  "source": "https://haembina.com",
+  "headline": "I make apps, games and developer tools.",
+  "subline": "Released on Google Play, the Chrome Web Store and GitHub.",
+  "darkArt": ["sangria"],
+  "released": [
+    { "id": "dosiary", "name": "Dosiary", "platforms": "Windows · Linux · Android" },
+    { "id": "sijil", "name": "Sijil", "platforms": "Windows · Android" },
+    { "id": "rdc", "name": "Remote Duel Companion", "platforms": "Web" },
+    { "id": "sonarqube-dark-mode", "name": "SonarQube Dark Mode", "platforms": "Chrome" },
+    { "id": "steam-cookie-reader", "name": "Steam Cookie Reader", "platforms": "Chrome" },
+    { "id": "haembina-branch-analysis", "name": "Haembina Branch Analysis", "platforms": "SonarQube" },
+    { "id": "haembina-project-reports", "name": "Haembina Project Reports", "platforms": "SonarQube" }
+  ],
+  "inTheWorks": [
+    { "id": "idlefc", "name": "IDLE Football Club", "platforms": "Android", "status": "testing" },
+    { "id": "heimaria", "name": "Heimaria", "platforms": "Android", "status": "testing" },
+    { "id": "sangria", "name": "Sangria", "platforms": "Android", "status": "testing" },
+    { "id": "fusaifisa", "name": "Fusaifisa", "platforms": "Windows", "status": "building" },
+    { "id": "meowtor", "name": "Meowtor", "platforms": "Library", "status": "building" }
+  ],
+  "tooling": [
+    { "id": "watchcat", "name": "watchcat" },
+    { "id": "haembina-conventions", "name": "haembina-conventions" },
+    { "id": "haembina-release", "name": "haembina-release" },
+    { "id": "haembina-modules", "name": "haembina-modules" }
+  ],
+  "socials": [
+    { "id": "web", "icon": "globe-outline", "name": "Website", "handle": "haembina.com", "url": "https://haembina.com", "color": "#e0004b" },
+    { "id": "discord", "icon": "logo-discord", "name": "Discord", "handle": "Community server", "url": "https://discord.com/invite/BjzKegX", "color": "#5865f2" },
+    { "id": "twitch", "icon": "logo-twitch", "name": "Twitch", "handle": "twitch.tv/haembina", "url": "https://www.twitch.tv/haembina", "color": "#9146ff" },
+    { "id": "youtube", "icon": "logo-youtube", "name": "YouTube", "handle": "Haembina", "url": "https://www.youtube.com/channel/UCByAvCuytK2CMLfd8e5xLcw", "color": "#ff0000" },
+    { "id": "instagram", "icon": "logo-instagram", "name": "Instagram", "handle": "@therealhaembina", "url": "https://www.instagram.com/therealhaembina/", "color": "#e1306c" },
+    { "id": "reddit", "icon": "logo-reddit", "name": "Reddit", "handle": "r/Haembina", "url": "https://www.reddit.com/r/Haembina/", "color": "#ff4500" },
+    { "id": "x", "icon": "logo-x", "name": "X", "handle": "@haembina", "url": "https://x.com/haembina", "color": "#0f1419" },
+    { "id": "facebook", "icon": "logo-facebook", "name": "Facebook", "handle": "Haembina", "url": "https://www.facebook.com/Haembina/", "color": "#1877f2" }
+  ]
+}
