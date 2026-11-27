@@ -8,6 +8,8 @@ const ROOT = fileURLToPath(new URL('..', import.meta.url));
 const WIDE = 846;
 const NARROW = 340;
 const BUTTON = 260;
+const BUTTON_NARROW = 120;
+const ART = 400;
 const profile = JSON.parse(readFileSync(join(ROOT, 'profile.json'), 'utf8'));
 const source = process.env.PROFILE_SOURCE ?? profile.source;
 
@@ -20,10 +22,13 @@ const fetchOk = async (url) => {
   return response;
 };
 
+const isImage = (response) => response.ok && (response.headers.get('content-type') ?? '').startsWith('image/');
+
 const fetchLogo = async (id) => {
   const small = await fetch(`${source}/assets/projects/${id}/logo-128.avif`);
-  if (small.ok) return dataUri(await small.arrayBuffer(), 'image/avif');
+  if (isImage(small)) return dataUri(await small.arrayBuffer(), 'image/avif');
   const full = await fetchOk(`${source}/assets/projects/${id}/logo.png`);
+  if (!isImage(full)) throw new Error(`${source} serves no logo image for ${id}`);
   return dataUri(await full.arrayBuffer(), 'image/png');
 };
 
@@ -131,8 +136,8 @@ ${picture('tooling', `Tooling: ${d.tooling.map((p) => `${p.name}, ${p.tagline}`)
 
 ## Elsewhere
 
-${picture('art', 'The Haembina duck at a keyboard, thinking of its social accounts', { narrow: false, attrs: 'align="left" width="38%"' })}
-${profile.socials.map((s) => `<a href="${s.url}">${picture(`social-${s.id}`, `${s.name}: ${s.handle}`, { narrow: false, attrs: 'width="30%"' })}</a>`).join('\n')}
+${picture('art', 'The Haembina duck at a keyboard, thinking of its social accounts', { narrow: false, attrs: 'align="left" width="36%"' })}
+${profile.socials.map((s) => `<a href="${s.url}">${picture(`social-${s.id}`, `${s.name}: ${s.handle}`, { attrs: 'width="29%"' })}</a>`).join('\n')}
 <br clear="left">
 `;
 
@@ -152,15 +157,17 @@ const browser = await chromium.launch();
 const changed = [];
 for (const theme of Object.keys(THEMES)) {
   for (const [name, build] of Object.entries(PANELS)) {
-    const sizes = name === 'art' ? [[WIDE, '']] : [[WIDE, ''], [NARROW, '-narrow']];
+    const sizes = name === 'art' ? [[ART, '']] : [[WIDE, ''], [NARROW, '-narrow']];
     for (const [width, suffix] of sizes) {
       const svg = await toSvg(browser, page(theme, fonts, suffix !== '', build(data)), width);
       if (write(`${name}-${theme}${suffix}`, svg)) changed.push(`${name}-${theme}${suffix}`);
     }
   }
   for (const social of profile.socials) {
-    const svg = await toSvg(browser, page(theme, fonts, false, socialButton(social, icon(social.icon))), BUTTON);
-    if (write(`social-${social.id}-${theme}`, svg)) changed.push(`social-${social.id}-${theme}`);
+    for (const [width, suffix] of [[BUTTON, ''], [BUTTON_NARROW, '-narrow']]) {
+      const svg = await toSvg(browser, page(theme, fonts, suffix !== '', socialButton(social, icon(social.icon))), width);
+      if (write(`social-${social.id}-${theme}${suffix}`, svg)) changed.push(`social-${social.id}-${theme}${suffix}`);
+    }
   }
 }
 await browser.close();

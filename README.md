@@ -43,38 +43,54 @@
 
 <picture>
 <source media="(prefers-color-scheme: dark)" srcset="images/art-dark.svg">
-<img alt="The Haembina duck at a keyboard, thinking of its social accounts" src="images/art-light.svg" align="left" width="38%">
+<img alt="The Haembina duck at a keyboard, thinking of its social accounts" src="images/art-light.svg" align="left" width="36%">
 </picture>
 <a href="https://haembina.com"><picture>
+<source media="(prefers-color-scheme: dark) and (max-width: 600px)" srcset="images/social-web-dark-narrow.svg">
+<source media="(max-width: 600px)" srcset="images/social-web-light-narrow.svg">
 <source media="(prefers-color-scheme: dark)" srcset="images/social-web-dark.svg">
-<img alt="Website: haembina.com" src="images/social-web-light.svg" width="30%">
+<img alt="Website: haembina.com" src="images/social-web-light.svg" width="29%">
 </picture></a>
 <a href="https://discord.com/invite/BjzKegX"><picture>
+<source media="(prefers-color-scheme: dark) and (max-width: 600px)" srcset="images/social-discord-dark-narrow.svg">
+<source media="(max-width: 600px)" srcset="images/social-discord-light-narrow.svg">
 <source media="(prefers-color-scheme: dark)" srcset="images/social-discord-dark.svg">
-<img alt="Discord: Community server" src="images/social-discord-light.svg" width="30%">
+<img alt="Discord: Community server" src="images/social-discord-light.svg" width="29%">
 </picture></a>
 <a href="https://www.twitch.tv/haembina"><picture>
+<source media="(prefers-color-scheme: dark) and (max-width: 600px)" srcset="images/social-twitch-dark-narrow.svg">
+<source media="(max-width: 600px)" srcset="images/social-twitch-light-narrow.svg">
 <source media="(prefers-color-scheme: dark)" srcset="images/social-twitch-dark.svg">
-<img alt="Twitch: twitch.tv/haembina" src="images/social-twitch-light.svg" width="30%">
+<img alt="Twitch: twitch.tv/haembina" src="images/social-twitch-light.svg" width="29%">
 </picture></a>
 <a href="https://www.youtube.com/channel/UCByAvCuytK2CMLfd8e5xLcw"><picture>
+<source media="(prefers-color-scheme: dark) and (max-width: 600px)" srcset="images/social-youtube-dark-narrow.svg">
+<source media="(max-width: 600px)" srcset="images/social-youtube-light-narrow.svg">
 <source media="(prefers-color-scheme: dark)" srcset="images/social-youtube-dark.svg">
-<img alt="YouTube: Haembina" src="images/social-youtube-light.svg" width="30%">
+<img alt="YouTube: Haembina" src="images/social-youtube-light.svg" width="29%">
 </picture></a>
 <a href="https://www.instagram.com/therealhaembina/"><picture>
+<source media="(prefers-color-scheme: dark) and (max-width: 600px)" srcset="images/social-instagram-dark-narrow.svg">
+<source media="(max-width: 600px)" srcset="images/social-instagram-light-narrow.svg">
 <source media="(prefers-color-scheme: dark)" srcset="images/social-instagram-dark.svg">
-<img alt="Instagram: @therealhaembina" src="images/social-instagram-light.svg" width="30%">
+<img alt="Instagram: @therealhaembina" src="images/social-instagram-light.svg" width="29%">
 </picture></a>
 <a href="https://www.reddit.com/r/Haembina/"><picture>
+<source media="(prefers-color-scheme: dark) and (max-width: 600px)" srcset="images/social-reddit-dark-narrow.svg">
+<source media="(max-width: 600px)" srcset="images/social-reddit-light-narrow.svg">
 <source media="(prefers-color-scheme: dark)" srcset="images/social-reddit-dark.svg">
-<img alt="Reddit: r/Haembina" src="images/social-reddit-light.svg" width="30%">
+<img alt="Reddit: r/Haembina" src="images/social-reddit-light.svg" width="29%">
 </picture></a>
 <a href="https://x.com/haembina"><picture>
+<source media="(prefers-color-scheme: dark) and (max-width: 600px)" srcset="images/social-x-dark-narrow.svg">
+<source media="(max-width: 600px)" srcset="images/social-x-light-narrow.svg">
 <source media="(prefers-color-scheme: dark)" srcset="images/social-x-dark.svg">
-<img alt="X: @haembina" src="images/social-x-light.svg" width="30%">
+<img alt="X: @haembina" src="images/social-x-light.svg" width="29%">
 </picture></a>
 <a href="https://www.facebook.com/Haembina/"><picture>
+<source media="(prefers-color-scheme: dark) and (max-width: 600px)" srcset="images/social-facebook-dark-narrow.svg">
+<source media="(max-width: 600px)" srcset="images/social-facebook-light-narrow.svg">
 <source media="(prefers-color-scheme: dark)" srcset="images/social-facebook-dark.svg">
-<img alt="Facebook: Haembina" src="images/social-facebook-light.svg" width="30%">
+<img alt="Facebook: Haembina" src="images/social-facebook-light.svg" width="29%">
 </picture></a>
 <br clear="left">
