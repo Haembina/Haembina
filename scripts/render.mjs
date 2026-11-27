@@ -111,28 +111,20 @@ const picture = (name, alt, { narrow = true, attrs = 'width="100%"' } = {}) => [
   `<source media="(prefers-color-scheme: dark)" srcset="images/${name}-dark.svg">`,
   `<img alt="${escape(alt)}" src="images/${name}-light.svg" ${attrs}>`,
   '</picture>',
-].join('\n');
+].join('');
 
 const readme = (d) => `<!-- Written by scripts/render.mjs from profile.json and ${source}; edit those, not this file. -->
-<a href="${source}">
-${picture('banner', `Haembina. ${d.headline} ${d.subline}`)}
-</a>
+<a href="${source}">${picture('banner', `Haembina. ${d.headline} ${d.subline}`)}</a>
 
-<a href="${source}/work/${d.newest.id}">
-${picture('newest', `Newest: ${d.newest.name} v${d.newest.version}, released ${d.newest.date}`)}
-</a>
+<a href="${source}/work/${d.newest.id}">${picture('newest', `Newest: ${d.newest.name} v${d.newest.version}, released ${d.newest.date}`)}</a>
 
 ## Projects
 
-<a href="${source}/work">
-${picture('projects', `Released: ${d.released.map((p) => `${p.name} v${p.version}`).join(', ')}. In the works: ${d.inTheWorks.map((p) => p.name).join(', ')}.`)}
-</a>
+<a href="${source}/work">${picture('projects', `Released: ${d.released.map((p) => `${p.name} v${p.version}`).join(', ')}. In the works: ${d.inTheWorks.map((p) => p.name).join(', ')}.`)}</a>
 
 ## Tooling
 
-<a href="${source}/work">
-${picture('tooling', `Tooling: ${d.tooling.map((p) => `${p.name}, ${p.tagline}`).join(' ')}`)}
-</a>
+<a href="${source}/work">${picture('tooling', `Tooling: ${d.tooling.map((p) => `${p.name}, ${p.tagline}`).join(' ')}`)}</a>
 
 ## Elsewhere
 
