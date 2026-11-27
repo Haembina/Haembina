@@ -5,11 +5,11 @@
 
 ## Projects
 
-<a href="https://haembina.com/work"><picture><source media="(prefers-color-scheme: dark) and (max-width: 600px)" srcset="images/projects-dark-narrow.svg"><source media="(max-width: 600px)" srcset="images/projects-light-narrow.svg"><source media="(prefers-color-scheme: dark)" srcset="images/projects-dark.svg"><img alt="Released: Dosiary v1.27.1, Sijil v0.41.10, Remote Duel Companion v0.24.2, SonarQube Dark Mode v1.5.2, Steam Cookie Reader v1.8.0, Haembina Branch Analysis v27.4.4, Haembina Project Reports v0.4.2. In the works: IDLE Football Club, Heimaria, Sangria, Fusaifisa, Meowtor." src="images/projects-light.svg" width="100%"></picture></a>
+<a href="https://haembina.com/projects"><picture><source media="(prefers-color-scheme: dark) and (max-width: 600px)" srcset="images/projects-dark-narrow.svg"><source media="(max-width: 600px)" srcset="images/projects-light-narrow.svg"><source media="(prefers-color-scheme: dark)" srcset="images/projects-dark.svg"><img alt="Released: Dosiary v1.27.1, Sijil v0.41.10, Remote Duel Companion v0.24.2, SonarQube Dark Mode v1.5.2, Steam Cookie Reader v1.8.0, Haembina Branch Analysis v27.4.4, Haembina Project Reports v0.4.2. In the works: IDLE Football Club, Heimaria, Sangria, Fusaifisa, Meowtor." src="images/projects-light.svg" width="100%"></picture></a>
 
 ## Tooling
 
-<a href="https://haembina.com/work"><picture><source media="(prefers-color-scheme: dark) and (max-width: 600px)" srcset="images/tooling-dark-narrow.svg"><source media="(max-width: 600px)" srcset="images/tooling-light-narrow.svg"><source media="(prefers-color-scheme: dark)" srcset="images/tooling-dark.svg"><img alt="Tooling: watchcat, One panel showing the state of every repository at once. haembina-conventions, One rulebook every project here follows, and the gate that checks it. haembina-release, One command turns commits into a released version. haembina-modules, Everything two projects need, built once." src="images/tooling-light.svg" width="100%"></picture></a>
+<a href="https://haembina.com/projects"><picture><source media="(prefers-color-scheme: dark) and (max-width: 600px)" srcset="images/tooling-dark-narrow.svg"><source media="(max-width: 600px)" srcset="images/tooling-light-narrow.svg"><source media="(prefers-color-scheme: dark)" srcset="images/tooling-dark.svg"><img alt="Tooling: watchcat, One panel showing the state of every repository at once. haembina-conventions, One rulebook every project here follows, and the gate that checks it. haembina-release, One command turns commits into a released version. haembina-modules, Everything two projects need, built once." src="images/tooling-light.svg" width="100%"></picture></a>
 
 ## Elsewhere
 
