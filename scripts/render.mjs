@@ -76,7 +76,11 @@ const loadData = async () => {
     inTheWorks,
     tooling,
     newest,
-    art: { wave: local('assets/art/wave.png', 'image/png'), socials: local('assets/art/socials.png', 'image/png') },
+    art: {
+      wave: local('assets/art/wave.png', 'image/png'),
+      socials: local('assets/art/socials.png', 'image/png'),
+      gamer: local('assets/art/gamer.png', 'image/png'),
+    },
   };
 };
 
