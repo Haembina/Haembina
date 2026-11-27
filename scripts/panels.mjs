@@ -98,7 +98,7 @@ const releasedRow = (p) => `
     <div>
       <p class="row-head"><span class="row-name">${escape(p.name)}</span><span class="row-meta"><b>v${escape(p.version)}</b> · ${escape(p.date)}</span></p>
       <p class="row-line">${escape(p.tagline)}</p>
-      <p class="row-platforms">${escape(p.platforms)}</p>
+      ${p.platforms ? `<p class="row-platforms">${escape(p.platforms)}</p>` : ''}
     </div>
   </li>`;
 
@@ -107,7 +107,7 @@ const worksRow = (p) => `
     <div>
       <p class="row-head"><span class="row-name">${escape(p.name)}</span><span class="status">${dot(p.status)}${STATUS[p.status].label}</span></p>
       <p class="row-line">${escape(p.tagline)}</p>
-      <p class="row-platforms">${escape(p.platforms)}${p.version ? ` · v${escape(p.version)}` : ''}</p>
+      <p class="row-platforms">${escape([p.platforms, p.version && `v${p.version}`].filter(Boolean).join(' · '))}</p>
     </div>
   </li>`;
 

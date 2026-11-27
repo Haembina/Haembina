@@ -4,20 +4,20 @@
   "subline": "Released on Google Play, the Chrome Web Store and GitHub.",
   "darkArt": ["sangria"],
   "released": [
-    { "id": "dosiary", "name": "Dosiary", "platforms": "Windows · Linux · Android" },
-    { "id": "sijil", "name": "Sijil", "platforms": "Windows · Android" },
-    { "id": "rdc", "name": "Remote Duel Companion", "platforms": "Web" },
-    { "id": "sonarqube-dark-mode", "name": "SonarQube Dark Mode", "platforms": "Chrome" },
-    { "id": "steam-cookie-reader", "name": "Steam Cookie Reader", "platforms": "Chrome" },
-    { "id": "haembina-branch-analysis", "name": "Haembina Branch Analysis", "platforms": "SonarQube" },
-    { "id": "haembina-project-reports", "name": "Haembina Project Reports", "platforms": "SonarQube" }
+    { "id": "dosiary", "name": "Dosiary" },
+    { "id": "sijil", "name": "Sijil" },
+    { "id": "rdc", "name": "Remote Duel Companion" },
+    { "id": "sonarqube-dark-mode", "name": "SonarQube Dark Mode" },
+    { "id": "steam-cookie-reader", "name": "Steam Cookie Reader" },
+    { "id": "haembina-branch-analysis", "name": "Haembina Branch Analysis" },
+    { "id": "haembina-project-reports", "name": "Haembina Project Reports" }
   ],
   "inTheWorks": [
-    { "id": "idlefc", "name": "IDLE Football Club", "platforms": "Android", "status": "testing" },
-    { "id": "heimaria", "name": "Heimaria", "platforms": "Android", "status": "testing" },
-    { "id": "sangria", "name": "Sangria", "platforms": "Android", "status": "testing" },
-    { "id": "fusaifisa", "name": "Fusaifisa", "platforms": "Windows", "status": "building" },
-    { "id": "meowtor", "name": "Meowtor", "platforms": "Library", "status": "building" }
+    { "id": "idlefc", "name": "IDLE Football Club", "status": "testing" },
+    { "id": "heimaria", "name": "Heimaria", "status": "testing" },
+    { "id": "sangria", "name": "Sangria", "status": "testing" },
+    { "id": "fusaifisa", "name": "Fusaifisa", "status": "building" },
+    { "id": "meowtor", "name": "Meowtor", "status": "building" }
   ],
   "tooling": [
     { "id": "watchcat", "name": "watchcat" },
