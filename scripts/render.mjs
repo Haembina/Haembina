@@ -32,6 +32,13 @@ const fetchLogo = async (id) => {
   return dataUri(await full.arrayBuffer(), 'image/png');
 };
 
+const fetchPlatforms = async (id) => {
+  const html = await (await fetchOk(`${source}/work/${id}`)).text();
+  const list = html.match(/data-testid="facts-platforms"[^>]*>([\s\S]*?)<\/dd>/);
+  if (!list) return '';
+  return [...list[1].matchAll(/<\/haembina-icon>\s*([^<]+?)\s*<\/span>/g)].map(([, name]) => name.trim()).join(' · ');
+};
+
 const formatDate = (iso) =>
   new Date(`${iso}T12:00:00Z`).toLocaleDateString('en-US', { month: 'short', day: 'numeric', year: 'numeric', timeZone: 'UTC' });
 
@@ -40,7 +47,7 @@ const loadData = async () => {
   const copy = await (await fetchOk(`${source}/assets/locale/en.json`)).json();
   const darkArt = new Set(profile.darkArt);
 
-  const enrich = async (entry, needsRelease) => {
+  const enrich = async (entry, needsRelease, withPlatforms = true) => {
     const tagline = copy.project?.[entry.id]?.tagline;
     if (!tagline) throw new Error(`${source} has no tagline for ${entry.id}`);
     const release = releases.find((r) => r.id === entry.id);
@@ -51,6 +58,7 @@ const loadData = async () => {
       version: release?.version,
       isoDate: release?.date,
       date: release ? formatDate(release.date) : undefined,
+      platforms: withPlatforms ? await fetchPlatforms(entry.id) : '',
       logo: await fetchLogo(entry.id),
       plate: darkArt.has(entry.id),
     };
@@ -58,7 +66,7 @@ const loadData = async () => {
 
   const released = await Promise.all(profile.released.map((p) => enrich(p, true)));
   const inTheWorks = await Promise.all(profile.inTheWorks.map((p) => enrich(p, false)));
-  const tooling = await Promise.all(profile.tooling.map((p) => enrich(p, false)));
+  const tooling = await Promise.all(profile.tooling.map((p) => enrich(p, false, false)));
   const newest = [...released, ...inTheWorks].filter((p) => p.isoDate).sort((a, b) => b.isoDate.localeCompare(a.isoDate))[0];
 
   return {
