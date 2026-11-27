@@ -120,11 +120,11 @@ const readme = (d) => `<!-- Written by scripts/render.mjs from profile.json and 
 
 ## Projects
 
-<a href="${source}/work">${picture('projects', `Released: ${d.released.map((p) => `${p.name} v${p.version}`).join(', ')}. In the works: ${d.inTheWorks.map((p) => p.name).join(', ')}.`)}</a>
+<a href="${source}/projects">${picture('projects', `Released: ${d.released.map((p) => `${p.name} v${p.version}`).join(', ')}. In the works: ${d.inTheWorks.map((p) => p.name).join(', ')}.`)}</a>
 
 ## Tooling
 
-<a href="${source}/work">${picture('tooling', `Tooling: ${d.tooling.map((p) => `${p.name}, ${p.tagline}`).join(' ')}`)}</a>
+<a href="${source}/projects">${picture('tooling', `Tooling: ${d.tooling.map((p) => `${p.name}, ${p.tagline}`).join(' ')}`)}</a>
 
 ## Elsewhere
 
@@ -132,6 +132,14 @@ ${picture('art', 'The Haembina duck at a keyboard, thinking of its social accoun
 ${profile.socials.map((s) => `<a href="${s.url}">${picture(`social-${s.id}`, `${s.name}: ${s.handle}`, { attrs: 'width="29%"' })}</a>`).join('\n')}
 <br clear="left">
 `;
+
+const assertLinksExist = async (text) => {
+  const sitemap = await (await fetchOk(`${source}/sitemap.xml`)).text();
+  const pages = new Set([...sitemap.matchAll(/<loc>([^<]+)<\/loc>/g)].map(([, url]) => url.replace(/\/$/, '')));
+  const linked = [...text.matchAll(/href="([^"]+)"/g)].map(([, url]) => url).filter((url) => url.startsWith(source));
+  const missing = linked.filter((url) => !pages.has(url.replace(/\/$/, '')));
+  if (missing.length) throw new Error(`${source}/sitemap.xml lists no page for ${missing.join(', ')}`);
+};
 
 const writeReadme = (text) => {
   const path = join(ROOT, 'README.md');
@@ -163,5 +171,7 @@ for (const theme of Object.keys(THEMES)) {
   }
 }
 await browser.close();
-if (writeReadme(readme(data))) changed.push('README.md');
+const text = readme(data);
+await assertLinksExist(text);
+if (writeReadme(text)) changed.push('README.md');
 console.log(changed.length ? `redrew ${changed.join(', ')}` : 'nothing changed');
