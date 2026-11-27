@@ -57,6 +57,8 @@ const css = (theme, fonts) => `
 .status { display: inline-flex; align-items: center; gap: 5px; font-size: 12px; font-weight: 800; color: var(--muted); }
 .dot { width: 8px; height: 8px; border-radius: 50%; display: inline-block; }
 
+.works-art { display: block; width: 100%; margin-top: 18px; }
+
 .tooling { padding: 8px 28px 14px; }
 .tooling .rows { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); column-gap: 32px; }
 .tooling .row { grid-template-columns: 40px minmax(0, 1fr); }
@@ -83,6 +85,7 @@ const css = (theme, fonts) => `
 .narrow .duck { width: 96px; }
 .narrow .projects { grid-template-columns: 1fr; padding: 18px 16px 4px; }
 .narrow .works { margin-top: 16px; }
+.narrow .works-art { margin-top: 8px; }
 .narrow .tooling { padding: 4px 16px 8px; }
 .narrow .tooling .rows { grid-template-columns: 1fr; }
 .narrow .tooling .row:nth-child(2) { border-top: 1px solid var(--rule); }
@@ -140,6 +143,7 @@ export const PANELS = {
   <section class="works">
     <h3 class="col-title">In the works<span class="count">${d.inTheWorks.length}</span></h3>
     <ul class="rows">${d.inTheWorks.map(worksRow).join('')}</ul>
+    <img class="works-art" src="${d.art.gamer}" alt="" />
   </section>
 </div>`,
   tooling: (d) => `
