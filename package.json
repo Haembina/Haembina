@@ -1,0 +1,15 @@
+{
+  "name": "haembina-profile",
+  "private": true,
+  "description": "Draws the Haembina GitHub profile's panels from haembina.com's release data",
+  "type": "module",
+  "engines": {
+    "node": ">=22"
+  },
+  "scripts": {
+    "render": "node scripts/render.mjs"
+  },
+  "devDependencies": {
+    "playwright": "1.65.1"
+  }
+}
